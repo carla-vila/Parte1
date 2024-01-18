@@ -487,9 +487,9 @@ if __name__ == '__main__':
         logging.error("usage: %s port" % (sys.argv[0]))
         sys.exit(-1)
 
-    p = int(sys.argv[2])
+    p = int(sys.argv[1])
 
-    os.getenv('GRUPO_NUMERO', sys.argv[1])
+    os.getenv('GRUPO_NUMERO', sys.argv[2])
 
 
     logging.info("start at port %s" % (p))
