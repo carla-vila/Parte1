@@ -350,7 +350,6 @@ def ratingsRoute(product_id):
 
 # Data providers:
 def getProducts():
-    grupo_numero = os.environ.get('GRUPO_NUMERO','30')
 
     return [
         {
@@ -489,8 +488,7 @@ if __name__ == '__main__':
 
     p = int(sys.argv[1])
 
-    os.getenv('GRUPO_NUMERO', sys.argv[2])
-
+    grupo_numero = os.getenv('GRUPO_NUMERO', sys.argv[2])
 
     logging.info("start at port %s" % (p))
     # Make it compatible with IPv6 if Linux
