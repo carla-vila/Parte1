@@ -43,6 +43,8 @@ except ImportError:
     import httplib as http_client
 http_client.HTTPConnection.debuglevel = 1
 
+
+
 app = Flask(__name__)
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 requests_log = logging.getLogger("requests.packages.urllib3")
@@ -481,11 +483,15 @@ class Writer(object):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 3:
         logging.error("usage: %s port" % (sys.argv[0]))
         sys.exit(-1)
 
-    p = int(sys.argv[1])
+    p = int(sys.argv[2])
+
+    os.getenv('GRUPO_NUMERO', sys.argv[1])
+
+
     logging.info("start at port %s" % (p))
     # Make it compatible with IPv6 if Linux
     if sys.platform == "linux":
